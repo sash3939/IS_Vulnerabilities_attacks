@@ -23,6 +23,33 @@
   
 *Приведите ответ в свободной форме.*  
 
+### Решение 1
+
+[open services](https://github.com/sash3939/IS_Vulnerabilities_attacks/assets/156709540/95ff2a38-5f0f-47e7-9f2f-438b48001f72)
+
+Vulnerabilities
+1. [ProFTPD](https://github.com/sash3939/IS_Vulnerabilities_attacks/assets/156709540/403a82aa-d7a4-4add-ae61-a78dfae32f9b)
+
+https://www.exploit-db.com/search?q=ProFTPD+1.3.5
+
+FTP (порт 21/tcp):
+Уязвимость: ProFTPD 1.3.5 - Remote Command Execution (CVE-2015-3306)
+
+2. [OpenSSH](https://github.com/sash3939/IS_Vulnerabilities_attacks/assets/156709540/3e5976a6-36c0-4974-a4c3-3dfff167981d)
+
+https://www.exploit-db.com/search?q=OpenSSH+7.2p1
+
+SSH (порт 22/tcp):
+Уязвимость: OpenSSH 7.2p1 - User Enumeration (CVE-2016-6210)
+
+3. [Multiple Vendor Telnet](https://github.com/sash3939/IS_Vulnerabilities_attacks/assets/156709540/a7e5aa72-12f0-48b5-b1f4-110bb2545605)
+
+https://www.exploit-db.com/search?q=Multiple+Vendor+Telnet
+
+Telnet (порт 23/tcp):
+Уязвимость: Multiple Vendor Telnet - Remote Code Execution (CVE-2011-4862)
+Ссылка: CVE-2011-4862
+
 ### Задание 2
 
 Проведите сканирование Metasploitable в режимах SYN, FIN, Xmas, UDP.
@@ -35,3 +62,38 @@
 - Как отвечает сервер?
 
 *Приведите ответ в свободной форме.*
+
+### Решение 2
+
+[SYN](https://github.com/sash3939/IS_Vulnerabilities_attacks/assets/156709540/d3700f06-a07b-4fd1-ac7d-fa8414c27eb4)
+
+[FIN](https://github.com/sash3939/IS_Vulnerabilities_attacks/assets/156709540/2847e7b2-f553-4fdb-bc09-d9a33378ecf8)
+
+[Xmas](https://github.com/sash3939/IS_Vulnerabilities_attacks/assets/156709540/eb242311-81ce-4768-bfaa-6309afff242a)
+
+[UDP](https://github.com/sash3939/IS_Vulnerabilities_attacks/assets/156709540/84b82dd7-462d-46e7-aa99-199dbd7de7c4)
+
+
+**SYN сканирование:**
+Отправляет пакеты с флагом SYN (синхронизация) на целевую систему.
+Если порт открыт, целевая система ответит пакетом с установленными флагами SYN/ACK (синхронизация/подтверждение).
+Если порт закрыт, сервер ответит пакетом с установленным флагом RST (сброс соединения).
+
+**FIN сканирование:**
+Отправляет пакеты с установленным флагом FIN (завершение соединения) на целевую систему.
+Если порт открыт, целевая система или не ответит или ответит пакетом с флагом RST.
+Если порт закрыт, сервер может ответить пакетом с флагом RST или ничем не ответить.
+
+**Xmas сканирование:**
+Отправляет пакеты с установленными флагами FIN, PSH, и URG (urgent) на целевую систему.
+Если порт открыт, целевая система не ответит или ответит пакетом с флагом RST.
+Если порт закрыт, сервер может ответить пакетом с флагом RST или ничем не ответить.
+
+**UDP сканирование:**
+Отправляет UDP-пакеты на целевую систему.
+Если порт открыт, целевая система может ответить пакетом ICMP с сообщением port unreachable.
+Если порт закрыт, сервер может не ответить или отправить ICMP с сообщением о недостижимости порта.
+
+Ответы сервера зависят от открытых портов
+
+
